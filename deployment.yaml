@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deployment-demo
+spec:
+  selector:
+    matchLabels:
+      demo: deployment
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        demo: deployment
+    spec:
+      containers:
+      - name: busybox
+        image: kubilayceylan/busybox:v1
